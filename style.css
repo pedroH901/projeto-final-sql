@@ -100,7 +100,14 @@
     gap: 2.5vh;
 }
 
+.buttons h1 {
+    font-size: 2vh;
+    font-family: 'Arial', sans-serif;
+}
+
 .buttons button {
+    justify-content: center;
+    align-items: center;
     font-family: 'Arial', sans-serif;
 }
 
