@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #A8E6CF;
+    padding: 2.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2vh; 
+    align-items: center;
+}
+
+.header nav ul li button {
+    border: none;
+    background: none;
+    color: black;
+    font-size: 2vh;
+    cursor: pointer;
+    height: 5vh;
+    padding: 1vh 2vh;
+    white-space: nowrap; 
+}  
+
+.header nav ul li:nth-child(3) button,
+.header nav ul li:nth-child(4) button {
+    background-color: black;
+    color: #A8E6CF;
+    border-radius: 1vh;
+}
+
+.header img {
+    height: 10vh;
+    width: auto;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    padding: 2.5vh;
+    justify-content: space-between; /* This adds space between texto and buttons */
+}
+
+.botao-perdi button,
+.botao-encontrei button {
+    /* Update existing properties */
+    font-style: normal;
+    font-weight: 600; /* Medium bold weight */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 5vh;
+    border: none;
+    background-color: #56C596;
+    border-radius: 1.5vh;
+    height: 6.25vh;
+    width: 37.5vh;
+    font-size: 1.5em;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.botao-perdi,
+.botao-encontrei {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: large;
+    font-weight: bold;
+}
+
+.titulo {
+    font-size: 100%;
+}
+.titulo h1 {
+    font-size: 4em;
+    font-family: 'Arial', sans-serif;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
+}
+
+.buttons button {
+    font-family: 'Arial', sans-serif;
+}
+
+.buttons button, .buttons img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.btn {
+    margin-right: 1.25vh;
+}
+.texto {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+ 
