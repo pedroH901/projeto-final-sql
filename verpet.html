@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pet Perdido</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #D0F0FD;
+    }
+
+    header {
+      background-color: #A8E6CF;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    header nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .buttons-header {
+      display: flex;
+      gap: 10px;
+    }
+
+    .buttons-header button {
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .cadastro-btn {
+      background-color: black;
+      color: #A8E6CF;
+    }
+
+    .anunciar-btn {
+      background-color: black;
+      color: #A8E6CF;
+    }
+
+    .container {
+      display: flex;
+      gap: 40px;
+      padding: 40px;
+    }
+
+    .pet-info-img {
+      width: 300px;
+      background-color: #D0F0FD;
+      padding: 20px;
+      border-radius: 20px;
+      position: relative;
+      text-align: center;
+    }
+
+    .pet-info-img img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .status {
+      background-color: #ff7e94;
+      color: black;
+      font-weight: bold;
+      padding: 5px 10px;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      border-radius: 5px;
+    }
+
+    .recognize-btn {
+      margin-top: 15px;
+      background-color: #ff7e94;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .pet-details {
+      background-color: #D0F0FD;
+      border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+  padding: 40px;
+  flex: 1;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+    .pet-details h2 {
+      margin-bottom: 20px;
+    }
+
+    .pet-details label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .pet-details input,
+    .pet-details textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: white;
+      padding: 30px 40px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    footer div {
+      max-width: 200px;
+    }
+
+    footer h4 {
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: black;
+      display: block;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="imagens/radarPET 1.png" alt="Logo" height="50"> <!-- substitua pela logo real -->
+    </div>
+    <nav>
+      <a href="#">Como funciona</a>
+      <a href="#">Animais perdidos</a>
+      <a href="#">Animais encontrados</a>
+    </nav>
+    <div class="buttons-header">
+      <button class="cadastro-btn">Cadastre-se</button>
+      <button class="anunciar-btn">Anunciar pet perdido</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="pet-info-img">
+      <div class="status">PERDIDO</div>
+      <img src="imagens/lores.png" alt="Cachorro perdido"> <!-- substitua pela imagem real -->
+      <button class="recognize-btn">Reconhece esse pet?</button>
+    </div>
+
+    <div class="pet-details">
+      <h2>Lores, visto em Rua Xyz</h2>
+      <label>Sexo</label>
+      <input type="text" value="Fêmea">
+
+      <label>Espécie</label>
+      <input type="text" value="Cachorro">
+
+      <label>Raça</label>
+      <input type="text" value="Labrador">
+
+      <label>Descrição</label>
+      <input type="text" value="Cachorro amável, pequeno, preto e castanho etc">
+
+      <label>Nome do tutor responsável</label>
+      <input type="text" value="Márcia">
+
+      <label>Contato do tutor responsável</label>
+      <input type="text" value="11990011234">
+
+      <label>Mensagem</label>
+      <textarea>cachorro perdido abc</textarea>
+
+      <label>Visto em</label>
+      <input type="text" value="Jardim Angela">
+
+      <label>Data</label>
+      <input type="text" value="30/12/2016">
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <strong>Radar Pet</strong>
+    </div>
+    <div>
+      <h4>Anuncie pet perdido</h4>
+      <a href="#">Anuncie cachorro perdido</a>
+      <a href="#">Anuncie gato perdido</a>
+      <a href="#">Anuncie outros pets perdidos</a>
+    </div>
+    <div>
+      <h4>Anuncie pet encontrado</h4>
+      <a href="#">Anuncie cachorro encontrado</a>
+      <a href="#">Anuncie pet encontrado</a>
+      <a href="#">Anuncie outros pets encontrados</a>
+    </div>
+    <div>
+      <h4>Sobre nós</h4>
+      <a href="#">Como funciona</a>
+      <a href="#">Perguntas Frequentes</a>
+    </div>
+  </footer>
+
+</body>
+</html>
