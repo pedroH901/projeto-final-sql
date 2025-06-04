@@ -150,23 +150,75 @@
       display: block;
       margin-bottom: 6px;
     }
+
+    /* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ade6d0;
+  padding: 15px 30px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+  width: 60px;
+  height: 60px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1vh;
+} 
+
+.logo h1 {
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 45px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.actions .btn-dark {
+  background-color: #000;
+  color: #A8E6CF;
+  border: none;
+  padding: 8px 16px;
+  margin-left: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
   </style>
 </head>
 <body>
 
-  <header>
+   <header>
     <div class="logo">
-      <img src="imagens/radarPET 1.png" alt="Logo" height="50"> <!-- substitua pela logo real -->
+      <img src="imagens/RadarPet_logo.png" alt="Radar Pet Logo">
+      <h1>Radar Pet</h1>
     </div>
     <nav>
+ 
       <a href="#">Como funciona</a>
-      <a href="#">Animais perdidos</a>
-      <a href="#">Animais encontrados</a>
-    </nav>
-    <div class="buttons-header">
-      <button class="cadastro-btn">Cadastre-se</button>
-      <button class="anunciar-btn">Anunciar pet perdido</button>
+      <a href="#">Ver animais</a>
+
+    <div class="actions">
+      <button class="btn-dark">Cadastre-se</button>
+      <button class="btn-dark">Anunciar pet perdido</button>
     </div>
+
+    </nav>
   </header>
 
   <div class="container">
