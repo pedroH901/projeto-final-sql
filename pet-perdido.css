@@ -126,3 +126,124 @@ body, html {
         transform: translateY(-20px);
     }
 }
+
+/* section */
+.card {
+    background: #eaf3fb;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.status {
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.status.perdido {
+    background: #f87171;
+}
+
+.status.encontrado {
+    background: #34d399;
+}
+
+
+
+/* footer */
+footer {
+  border-top: 1px solid #e0e0e0;
+  padding: 40px 80px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-family: Arial, sans-serif;
+}
+
+.footerTitulo {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.iconsFooter {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.iconsFooter img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.iconsFooter img:hover {
+  opacity: 1;
+}
+
+.anuncios {
+  display: flex;
+  gap: 60px;
+}
+
+.anuncios div {
+  min-width: 150px;
+}
+
+.anuncios div ul {
+  list-style: none;
+  padding: 0;
+}
+
+.anuncios div ul li {
+  margin-bottom: 10px;
+}
+
+.anuncios div ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.anuncie-pet-perdido::before {
+  content: "Anuncie pet perdido";
+  display: block;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #000;
+}
+
+.anuncie-pet-encontrado::before {
+  content: "Anuncie pet encontrado";
+  display: block;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #000;
+}
+
+.sobre-nos::before {
+  content: "Sobre nós";
+  display: block;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #000;
+}
+
+footer .logo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
