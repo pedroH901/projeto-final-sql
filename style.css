@@ -11,12 +11,13 @@ body {
   color: #333;
 }
 
+/* Global styles */
 /* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ADE6D0;
+  background-color: #ade6d0;
   padding: 15px 30px;
 }
 
@@ -70,7 +71,7 @@ nav a {
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: #5ED3A3;
+  background-color: #5ed3a3;
   color: #fff;
   border: none;
   padding: 15px 25px;

@@ -4,23 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Radar Pet</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css" />
   </head>
   <body>
     <header>
-      <section class="header">
-        <img src="imagens/radarPET 1.png" alt="Logo" />
-        <nav>
-          <ul>
-            <li><button>Como Funciona</button></li>
-            <li><button>Ver Animais</button></li>
-            <li><button>Cadastre-se</button></li>
-            <li><button>Anunciar Pet Perdido</button></li>
-          </ul>
-        </nav>
-      </section>
+      <div class="logo">
+        <img src="imagens/RadarPet_logo.png" alt="Radar Pet Logo" />
+      </div>
+      <nav>
+        <a href="#">Como funciona</a>
+        <a href="#">Como funciona</a>
+        <a href="#">Ver animais</a>
+      </nav>
+      <div class="actions">
+        <button class="btn-dark">Cadastre-se</button>
+        <button class="btn-dark">Anunciar pet perdido</button>
+      </div>
     </header>
 
+    <div class="container-login">
+      <h1 class="titulo-login">
+        Sua rede de busca e ajuda animal<br />
+        <span class="subtitulo"
+          >Acesse sua conta, publique um alerta ou ajude quem está procurando. O
+          Radar Pet conecta pessoas e salva vidas!</span
+        >
+      </h1>
 
+      <div class="conteudo-login">
+        <img
+          class="img-login"
+          src="imagens/cachorro_login.png"
+          alt="Cachorro dourado feliz olhando para você"
+        />
+        <section class="login">
+          <form>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Digite aqui"
+              required
+            />
+
+            <!-- <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" placeholder="Digite a senha" required /> -->
+
+            <button class="botao-login-entrar" type="submit">Entrar</button>
+            <p>Não possui uma conta?</p>
+          </form>
+        </section>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Radar Pet. Todos os direitos reservados.</p>
+    </footer>
   </body>
 </html>
