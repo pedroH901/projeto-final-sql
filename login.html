@@ -1,99 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Radar Pet</title>
-    <link rel="stylesheet" href="login.css" />
-  </head>
-  <body>
-    <header>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radar Pet</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
     <div class="logo">
       <img src="imagens/RadarPet_logo.png" alt="Radar Pet Logo">
       <h1>Radar Pet</h1>
     </div>
     <nav>
- 
+
       <a href="#">Como funciona</a>
       <a href="#">Ver animais</a>
 
-    <div class="actions">
-      <button class="btn-dark">Cadastre-se</button>
-      <button class="btn-dark">Anunciar pet perdido</button>
-    </div>
+      <div class="actions">
+        <button class="btn-dark">Cadastre-se</button>
+        <button class="btn-dark">Anunciar pet perdido</button>
+      </div>
 
     </nav>
   </header>
 
-    <div class="container-login">
-      <h1 class="titulo-login">
-        Sua rede de busca e ajuda animal<br />
-        <span class="subtitulo"
-          >Acesse sua conta, publique um alerta ou ajude quem está procurando. O
-          Radar Pet conecta pessoas e salva vidas!</span
-        >
-      </h1>
+  <div class="container-login">
+    <h1 class="titulo-login">
+      Sua rede de busca e ajuda animal<br />
+      <span class="subtitulo">Acesse sua conta, publique um alerta ou ajude quem está procurando. O
+        Radar Pet conecta pessoas e salva vidas!</span>
+    </h1>
 
-      <div class="conteudo-login">
-        <img
-          class="img-login"
-          src="imagens/cachorro_login.png"
-          alt="Cachorro dourado feliz olhando para você"
-        />
-        <section class="login">
-          <form>
+    <div class="conteudo-login">
+      <img class="img-login" src="imagens/cachorro_login.png" alt="Cachorro dourado feliz olhando para você" />
+      <section class="login">
+        <form>
+          <div class="input-group">
+            <input type="email" id="email" name="email" placeholder=" " required />
             <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Digite aqui"
-              required
-            />
-
-            <!-- <label for="senha">Senha:</label>
+          </div>
+    
+          <!-- <label for="senha">Senha:</label>
     <input type="password" id="senha" name="senha" placeholder="Digite a senha" required /> -->
 
-            <button class="botao-login-entrar" type="submit">Entrar</button>
-            <a class="link-cadastro" href="cadastro.html"
-              ><p>Não possui uma conta?</p></a
-            >
-          </form>
-        </section>
+          <button class="botao-login-entrar" type="enviar">Entrar</button>
+          <a class="link-cadastro" href="cadastro.html">
+            <p>Não possui uma conta? Entre aqui</p>
+          </a>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">
+      <h1 class="footerTitulo">Radar Pet</h1>
+      <div class="iconsFooter">
+        <img src="imagens/facebook.png" alt="redes sociais">
+        <img src="imagens/linkedin.png" alt="redes sociais">
+        <img src="imagens/youtub.png" alt="redes sociais">
+        <img src="imagens/instagram.png" alt="redes sociais">
       </div>
     </div>
+    <div class="anuncios">
+      <div class="anuncie-pet-perdido">
+        <ul>
+          <li><a href="AnuncioPet">Anuncie cachorro perdido</a></li>
+          <li><a href="AnuncioPet">Anuncie gato perdido</a></li>
+          <li><a href="AnuncioPet">Anuncie outros perdido</a></li>
+        </ul>
+      </div>
+      <div class="anuncie-pet-encontrado">
+        <ul>
+          <li><a href="AnuncioPet">Anuncie cachorro encontrado</a></li>
+          <li><a href="AnuncioPet">Anuncie gato encontrado</a></li>
+          <li><a href="AnuncioPet">Anuncie outros encontrado</a></li>
+        </ul>
+      </div>
+      <div class="sobre-nos">
+        <ul>
+          <li><a href="#">Como funciona</a></li>
+          <li><a href="#">Perguntas frequentes</a></li>
+        </ul>
+      </div>
+  </footer>
+</body>
 
-    <footer>
-        <div class="logo">
-            <h1 class="footerTitulo">Radar Pet</h1>
-            <div class="iconsFooter">
-            <img src="imagens/facebook.png" alt="redes sociais">
-            <img src="imagens/linkedin.png" alt="redes sociais">
-            <img src="imagens/youtub.png" alt="redes sociais">
-            <img src="imagens/instagram.png" alt="redes sociais">
-            </div>
-        </div>
-        <div class="anuncios">
-            <div class="anuncie-pet-perdido">
-                <ul>
-                    <li><a href="AnuncioPet">Anuncie cachorro perdido</a></li>
-                    <li><a href="AnuncioPet">Anuncie gato perdido</a></li>
-                    <li><a href="AnuncioPet">Anuncie outros perdido</a></li>
-                </ul>
-            </div>
-            <div class="anuncie-pet-encontrado">
-                <ul>
-                    <li><a href="AnuncioPet">Anuncie cachorro encontrado</a></li>
-                    <li><a href="AnuncioPet">Anuncie gato encontrado</a></li>
-                    <li><a href="AnuncioPet">Anuncie outros encontrado</a></li>
-                </ul>
-            </div>
-            <div class="sobre-nos">
-                <ul>
-                    <li><a href="#">Como funciona</a></li>
-                    <li><a href="#">Perguntas frequentes</a></li>
-                </ul>
-            </div>
-    </footer>
-  </body>
 </html>
