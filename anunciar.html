@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Pet</title>
+    <link rel="stylesheet" href="anunciar.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="imagens/RadarPet_logo.png" alt="Radar Pet Logo"></a>
+      <h1>Radar Pet</h1>
+    </div>
+    <nav>
+ 
+      <a href="#">Como funciona</a>
+      <a href="pet-perdido.html">Ver animais</a>
+
+    <div class="actions">
+      <button class="btn-dark">Cadastre-se</button>
+      <button class="btn-dark">Anunciar pet perdido</button>
+    </div>
+
+    </nav>
+  </header>
+
+<section class="site">
+    <div class="criar-anuncio">
+        <h1>Criar anúncio pet</h1>
+        <p>Eles também sentem saudades. Anuncie gratuitamente e ajude seu pet a voltar para quem ama!</p>
+        <img src="imagens/familia com gato.png" alt="Anuncio Pet">
+    </div>
+
+   <div class="formulario">
+
+    <form action="/cadastro_pet" method="POST" enctype="multipart/form-data">
+        <label for="foto">Imagem do Pet:</label>
+        <input type="file" id="foto" name="foto">
+
+        <label for="especie">Espécie:</label>
+        <input type="text" id="especie" name="especie" required>
+
+        <label for="situacao">Situação:</label>
+        <select id="situacao" name="situacao">
+            <option value="Perdido">Perdido</option>
+            <option value="Encontrado">Encontrado</option>
+        </select>
+
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" required>
+
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo">
+            <option value="Macho">Macho</option>
+            <option value="Fêmea">Fêmea</option>
+        </select>
+
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" required>
+
+        <label for="bairro">Bairro:</label>
+        <input type="text" id="bairro" name="bairro" required>
+
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" required></textarea>
+
+        <button type="submit">Criar Anúncio</button>
+    </form>
+    
+</div>
+</section>
+
+ <footer>
+        <div class="logo">
+            <h1 class="footerTitulo">Radar Pet</h1>
+            <div class="iconsFooter">
+            <img src="imagens/facebook.png" alt="redes sociais">
+            <img src="imagens/linkedin.png" alt="redes sociais">
+            <img src="imagens/youtub.png" alt="redes sociais">
+            <img src="imagens/instagram.png" alt="redes sociais">
+            </div>
+        </div>
+        <div class="anuncios">
+            <div class="anuncie-pet-perdido">
+                <ul>
+                    <li><a href="AnuncioPet">Anuncie cachorro perdido</a></li>
+                    <li><a href="AnuncioPet">Anuncie gato perdido</a></li>
+                    <li><a href="AnuncioPet">Anuncie outros perdido</a></li>
+                </ul>
+            </div>
+            <div class="anuncie-pet-encontrado">
+                <ul>
+                    <li><a href="AnuncioPet">Anuncie cachorro encontrado</a></li>
+                    <li><a href="AnuncioPet">Anuncie gato encontrado</a></li>
+                    <li><a href="AnuncioPet">Anuncie outros encontrado</a></li>
+                </ul>
+            </div>
+            <div class="sobre-nos">
+                <ul>
+                    <li><a href="#">Como funciona</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                </ul>
+            </div>
+    </footer>
+</body>
+</html>
