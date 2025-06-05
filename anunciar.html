@@ -33,42 +33,65 @@
         <img src="imagens/familia com gato.png" alt="Anuncio Pet">
     </div>
 
-   <div class="formulario">
+    <div class="formulario">
+        <form action="/cadastro_pet" method="POST" enctype="multipart/form-data">
+            <h2 class="form-title">🐾 Cadastro de Pet</h2>
+            
+            <div class="form-group">
+                <div class="file-input-wrapper">
+                    <input type="file" id="foto" name="foto" accept="image/*">
+                    <div class="file-input-display" onclick="document.getElementById('foto').click()">
+                        📷 Clique para selecionar uma foto
+                    </div>
+                </div>
+            </div>
 
-    <form action="/cadastro_pet" method="POST" enctype="multipart/form-data">
-        <label for="foto">Imagem do Pet:</label>
-        <input type="file" id="foto" name="foto">
+            <div class="form-group">
+                <input type="text" id="especie" name="especie" required>
+                <label for="especie">Espécie</label>
+            </div>
+            
+            <div class="form-group">
+                <select id="situacao" name="situacao" required>
+                    <option value="" disabled selected></option>
+                    <option value="Perdido">Perdido</option>
+                    <option value="Encontrado">Encontrado</option>
+                </select>
+                <label for="situacao">Situação</label>
+            </div>
 
-        <label for="especie">Espécie:</label>
-        <input type="text" id="especie" name="especie" required>
+            <div class="form-group">
+                <input type="date" id="data" name="data" required>
+                <label for="data">Data</label>
+            </div>
 
-        <label for="situacao">Situação:</label>
-        <select id="situacao" name="situacao">
-            <option value="Perdido">Perdido</option>
-            <option value="Encontrado">Encontrado</option>
-        </select>
+            <div class="form-group">
+                <select id="sexo" name="sexo" required>
+                    <option value="" disabled selected></option>
+                    <option value="Macho">Macho</option>
+                    <option value="Fêmea">Fêmea</option>
+                </select>
+                <label for="sexo">Sexo</label>
+            </div>
 
-        <label for="data">Data:</label>
-        <input type="date" id="data" name="data" required>
+            <div class="form-group">
+                <input type="text" id="cidade" name="cidade" required>
+                <label for="cidade">Cidade</label>
+            </div>
 
-        <label for="sexo">Sexo:</label>
-        <select id="sexo" name="sexo">
-            <option value="Macho">Macho</option>
-            <option value="Fêmea">Fêmea</option>
-        </select>
+            <div class="form-group">
+                <input type="text" id="bairro" name="bairro" required>
+                <label for="bairro">Bairro</label>
+            </div>
 
-        <label for="cidade">Cidade:</label>
-        <input type="text" id="cidade" name="cidade" required>
+            <div class="form-group">
+                <textarea id="descricao" name="descricao" required></textarea>
+                <label for="descricao">Descrição</label>
+            </div>
 
-        <label for="bairro">Bairro:</label>
-        <input type="text" id="bairro" name="bairro" required>
-
-        <label for="descricao">Descrição:</label>
-        <textarea id="descricao" name="descricao" required></textarea>
-
-        <button type="submit">Criar Anúncio</button>
-    </form>
-    
+            <button type="submit" class="submit-button">Criar Anúncio</button>
+        </form>
+    </div>
 </div>
 </section>
 
@@ -104,5 +127,38 @@
                 </ul>
             </div>
     </footer>
+    
+    <script>
+        // Atualiza o display do input de arquivo
+        document.getElementById('foto').addEventListener('change', function(e) {
+            const display = document.querySelector('.file-input-display');
+            if (e.target.files.length > 0) {
+                display.textContent = `📷 ${e.target.files[0].name}`;
+                display.classList.add('has-file');
+            } else {
+                display.textContent = '📷 Clique para selecionar uma foto';
+                display.classList.remove('has-file');
+            }
+        });
+
+        // Garante que o efeito funcione com inputs que já têm valor
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                if (input.value) {
+                    input.classList.add('has-content');
+                }
+                
+                input.addEventListener('input', function() {
+                    if (this.value) {
+                        this.classList.add('has-content');
+                    } else {
+                        this.classList.remove('has-content');
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
