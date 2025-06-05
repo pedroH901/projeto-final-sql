@@ -103,7 +103,6 @@ body {
             padding: 0 4px;
         }
 
-        /* Label flutuante quando input tem foco ou conteúdo */
         .form-group input:focus + label,
         .form-group input:valid + label,
         .form-group select:focus + label,
@@ -117,7 +116,6 @@ body {
             font-weight: 600;
         }
 
-        /* Estilo quando input tem foco */
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
@@ -125,7 +123,6 @@ body {
             box-shadow: 0 0 0 3px rgba(86, 197, 150, 0.1);
         }
 
-        /* Tratamento especial para file input */
         .file-input-wrapper {
             position: relative;
             overflow: hidden;
