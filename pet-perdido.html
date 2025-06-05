@@ -35,36 +35,6 @@
 
     <div id="cards-container"></div>
 
-    <script>
-    async function carregarPets() {
-        const res = await fetch('http://localhost:8000/pets');
-        const pets = await res.json();
-        
-        const container = document.getElementById('cards-container');
-        container.innerHTML = '';
-
-        pets.forEach(pet => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            
-            card.innerHTML = `
-                <div class="status ${pet.status.toLowerCase()}">${pet.status}</div>
-                <img src="${pet.imagem_url}" alt="${pet.nome}">
-                <h3>${pet.nome}</h3>
-                <strong>${pet.endereco}</strong>
-                <p>${pet.descricao}</p>
-                <button>Ver pet</button>
-                <button>Reconhece esse pet?</button>
-            `;
-            
-            container.appendChild(card);
-        });
-    }
-
-    carregarPets();
-    </script>
-
-
     <footer>
         <div class="logo">
             <h1 class="footerTitulo">Radar Pet</h1>
