@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anunciar Pet - Radar Pet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='anunciar.css') }}">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='imagens/RadarPet_logo.png') }}" alt="Radar Pet Logo"></a>
+      <h1>Radar Pet</h1>
+    </div>
+    <nav>
+      <a href="#">Como funciona</a>
+      <a href="{{ url_for('pet_perdido') }}">Ver animais</a>
+      <div class="actions">
+        {% if session.user_id %}
+          <span style="margin-right: 15px;">Olá, {{ session.user_name }}!</span>
+          <a href="{{ url_for('logout') }}" class="btn-dark">Sair</a>
+        {% else %}
+          <a href="{{ url_for('cadastro') }}" class="btn-dark">Cadastre-se</a>
+          <a href="{{ url_for('login') }}" class="btn-dark">Login</a>
+        {% endif %}
+      </div>
+    </nav>
+  </header>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+          <div class="flash-message flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+<section class="site">
+    <div class="criar-anuncio">
+        <h1>Criar anúncio pet</h1>
+        <p>Eles também sentem saudades. Anuncie gratuitamente e ajude seu pet a voltar para quem ama!</p>
+        <img src="{{ url_for('static', filename='imagens/familia com gato.png') }}" alt="Anuncio Pet">
+    </div>
+
+    <div class="formulario">
+        <form method="POST" enctype="multipart/form-data">
+            <h2 class="form-title">🐾 Cadastro de Pet</h2>
+            
+            <div class="form-group">
+                <div class="file-input-wrapper">
+                    <input type="file" id="foto" name="foto" accept="image/*">
+                    <div class="file-input-display" onclick="document.getElementById('foto').click()">
+                        📷 Clique para selecionar uma foto
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <select id="situacao" name="situacao" required>
+                    <option value="" disabled selected></option>
+                    <option value="Perdido">Perdido</option>
+                    <option value="Achado">Encontrado</option>
+                </select>
+                <label for="situacao">Situação</label>
+            </div>
+
+            <div class="form-group">
+                <input type="date" id="data" name="data" required>
+                <label for="data">Data</label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="nome_pet" name="nome_pet" required>
+                <label for="nome_pet">Nome do pet</label>
+            </div>
+            
+            <div class="form-group">
+                <select id="especie" name="especie" required>
+                    <option value="" disabled selected></option>
+                    <option value="Cachorro">Cachorro</option>
+                    <option value="Gato">Gato</option>
+                    <option value="Outros">Outros</option>
+                </select>
+                <label for="especie">Espécie</label>
+            </div>
+
+            <div class="form-group">
+                <select id="sexo" name="sexo" required>
+                    <option value="" disabled selected></option>
+                    <option value="Macho">Macho</option>
+                    <option value="Fêmea">Fêmea</option>
+                </select>
+                <label for="sexo">Sexo</label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="raca" name="raca">
+                <label for="raca">Raça (Pitbull, Labrador...)</label>
+            </div>
+
+            <div class="form-group">
+                <textarea id="descricao" name="descricao" required></textarea>
+                <label for="descricao">Descrição do pet</label>
+            </div>
+
+            <div class="form-group">
+                <textarea id="mensagem_dono" name="mensagem_dono"></textarea>
+                <label for="mensagem_dono">Mensagem do dono</label>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" id="nome_tutor" name="nome_tutor" required>
+                <label for="nome_tutor">Nome do tutor</label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="visto_em" name="visto_em" required>
+                <label for="visto_em">Localização (Ex: Bairro, Cidade)</label>
+            </div>
+
+            <div class="form-group">
+                <input type="tel" id="telefone_tutor" name="telefone_tutor" required>
+                <label for="telefone_tutor">Telefone</label>
+            </div>
+
+            <button type="submit" class="submit-button">Criar Anúncio</button>
+        </form>
+
+    </div>
+</section>
+
+  <footer>
+        <div class="logo">
+            <h1 class="footerTitulo">Radar Pet</h1>
+            <div class="iconsFooter">
+            <img src="{{ url_for('static', filename='imagens/facebook_logo.png') }}" alt="redes sociais">
+            <img src="{{ url_for('static', filename='imagens/linkedin_logo.png') }}" alt="redes sociais">
+            <img src="{{ url_for('static', filename='imagens/youtube_logo.png') }}" alt="redes sociais">
+            <img src="{{ url_for('static', filename='imagens/instagram_logo.png') }}" alt="redes sociais">
+            </div>
+        </div>
+        <div class="anuncios">
+            <div class="anuncie-pet-perdido">
+                <ul>
+                    <li><a href="{{ url_for('anunciar') }}">Anuncie cachorro perdido</a></li>
+                    <li><a href="{{ url_for('anunciar') }}">Anuncie gato perdido</a></li>
+                    <li><a href="{{ url_for('anunciar') }}">Anuncie outros perdido</a></li>
+                </ul>
+            </div>
+            <div class="anuncie-pet-encontrado">
+                <ul>
+                    <li><a href="{{ url_for('anunciar') }}">Anuncie cachorro encontrado</a></li>
+                    <li><a href="{{ url_for('anunciar') }}">Anuncie gato encontrado</a></li>
+                    <li><a href="{{ url_for('anunciar') }}">Anuncie outros encontrado</a></li>
+                </ul>
+            </div>
+            <div class="sobre-nos">
+                <ul>
+                    <li><a href="#">Como funciona</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+  <script>
+      document.getElementById('foto').addEventListener('change', function(e) {
+          const display = document.querySelector('.file-input-display');
+          if (e.target.files.length > 0) {
+              display.textContent = `📷 ${e.target.files[0].name}`;
+              display.classList.add('has-file');
+          } else {
+              display.textContent = '📷 Clique para selecionar uma foto';
+              display.classList.remove('has-file');
+          }
+      });
+  </script>
+
+  <style>
+      .flash-messages { position: fixed; top: 20px; right: 20px; z-index: 1000; }
+      .flash-message { padding: 15px; margin-bottom: 10px; border-radius: 5px; font-weight: bold; }
+      .flash-success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+      .flash-error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+  </style>
+
+<script>
+    console.log("Página 'anunciar.html' carregada. Procurando pelo formulário...");
+
+    const petForm = document.querySelector('form');
+
+    if (petForm) {
+        console.log("Formulário encontrado! Adicionando o listener de 'submit'.");
+
+        petForm.addEventListener('submit', function(event) {
+            console.log("EVENTO 'SUBMIT' DETECTADO! O formulário foi enviado.");
+
+            const submitButton = petForm.querySelector('button[type="submit"]');
+
+            if (submitButton) {
+                console.log("Botão de submit encontrado. Verificando se já está desabilitado...");
+                
+                if (submitButton.disabled) {
+                    console.log("O botão JÁ ESTAVA desabilitado. Impedindo novo envio.");
+                    event.preventDefault(); // Impede o envio do formulário se o botão já estiver desabilitado
+                    return;
+                }
+
+                console.log("Desabilitando o botão agora...");
+                submitButton.disabled = true;
+                submitButton.textContent = 'Enviando...';
+                console.log("Botão desabilitado. A submissão deve ocorrer apenas uma vez.");
+            } else {
+                console.error("ERRO: Botão de submit não foi encontrado dentro do formulário!");
+            }
+        });
+    } else {
+        console.error("ERRO: Formulário não encontrado na página! O script não pode funcionar.");
+    }
+</script>
+</body>
+</html>

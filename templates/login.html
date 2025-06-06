@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Radar Pet</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='imagens/RadarPet_logo.png') }}" alt="Radar Pet Logo"></a>
+      <h1>Radar Pet</h1>
+    </div>
+    <nav>
+      <a href="#">Como funciona</a>
+      <a href="{{ url_for('pet_perdido') }}">Ver animais</a>
+      <div class="actions">
+        <a href="{{ url_for('cadastro') }}" class="btn-dark">Cadastre-se</a>
+        <a href="{{ url_for('anunciar') }}" class="btn-dark">Anunciar pet perdido</a>
+      </div>
+    </nav>
+  </header>
+  
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+          <div class="flash-message flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <div class="container-login">
+    <h1 class="titulo-login">
+      Sua rede de busca e ajuda animal<br />
+      <span class="subtitulo">Acesse sua conta, publique um alerta ou ajude quem está procurando.</span>
+    </h1>
+    <div class="conteudo-login">
+      <img class="img-login" src="{{ url_for('static', filename='imagens/cachorro_login.png') }}" alt="Cachorro dourado feliz" />
+      <section class="login">
+        <form method="POST">
+          <div class="input-group">
+            <input type="email" id="email" name="email" placeholder=" " required />
+            <label for="email">Email</label>
+          </div>
+          <button class="botao-login-entrar" type="submit">Entrar</button>
+          <a class="link-cadastro" href="{{ url_for('cadastro') }}">
+            <p>Não possui uma conta? Crie uma aqui</p>
+          </a>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+        <div class="logo">
+            <h1 class="footerTitulo">Radar Pet</h1>
+            <div class="iconsFooter">
+            <img src="{{ url_for('static', filename='imagens/facebook_logo.png') }}" alt="redes sociais">
+            <img src="{{ url_for('static', filename='imagens/linkedin_logo.png') }}" alt="redes sociais">
+            <img src="{{ url_for('static', filename='imagens/youtube_logo.png') }}" alt="redes sociais">
+            <img src="{{ url_for('static', filename='imagens/instagram_logo.png') }}" alt="redes sociais">
+            </div>
+        </div>
+        <div class="anuncios">
+            <div class="anuncie-pet-perdido">
+                <ul>
+                    <li><a href="{{ url_for('anunciar') }}">Anuncie cachorro perdido</a></li>
+                    <li><a href="{{ url_for('anunciar') }}">Anuncie gato perdido</a></li>
+                    <li><a href="{{ url_for('anunciar') }}">Anuncie outros perdido</a></li>
+                </ul>
+            </div>
+            <div class="anuncie-pet-encontrado">
+                <ul>
+                    <li><a href="{{ url_for('anunciar') }}">Anuncie cachorro encontrado</a></li>
+                    <li><a href="{{ url_for('anunciar') }}">Anuncie gato encontrado</a></li>
+                    <li><a href="{{ url_for('anunciar') }}">Anuncie outros encontrado</a></li>
+                </ul>
+            </div>
+            <div class="sobre-nos">
+                <ul>
+                    <li><a href="#">Como funciona</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <style>
+      .flash-messages { position: fixed; top: 20px; right: 20px; z-index: 1000; }
+      .flash-message { padding: 15px; margin-bottom: 10px; border-radius: 5px; font-weight: bold; }
+      .flash-success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+      .flash-error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    </style>
+</body>
+</html>
