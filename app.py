@@ -5,6 +5,7 @@ from database import init_db
 from models import Usuario, Pet
 import json
 from datetime import datetime
+import uuid
 
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'  # IMPORTANTE: mude isso em produção
@@ -123,8 +124,6 @@ def anunciar():
         )
         
         pet_id = pet.salvar()
-        
-        pet_id = pet.salvar()
         if pet_id:
             flash('Pet anunciado com sucesso!', 'success')
             return redirect(url_for('pet_perdido'))
@@ -174,4 +173,4 @@ def ver_pet(pet_id):
     return render_template('verpet.html', pet=pet)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5000, use_reloader=False)
