@@ -269,3 +269,21 @@ nav a {
     font-weight: bold;
     font-size: 1.2em;
 }
+
+.flash-message {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px; /* Borda um pouco mais suave */
+    font-weight: bold;
+    color: white;
+    opacity: 1;
+    transform: translateX(0); /* Posição inicial */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Animação para opacidade e posição */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+
+/* Nova classe para o estado de "desaparecendo" */
+.flash-message.fade-out {
+    opacity: 0;
+    transform: translateX(20px); /* Desliza 20px para a direita ao sumir */
+}

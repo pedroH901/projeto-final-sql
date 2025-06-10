@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='verpet.css') }}"> </head>
 <body>
 
-  <header>
+<header>
     <div class="logo">
       <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='imagens/RadarPet_logo.png') }}" alt="Radar Pet Logo"></a>
       <h1>Radar Pet</h1>
@@ -16,11 +16,16 @@
       <a href="#">Como funciona</a>
       <a href="{{ url_for('pet_perdido') }}">Ver animais</a>
       <div class="actions">
-        <a href="{{ url_for('cadastro') }}" class="btn-dark">Cadastre-se</a>
-        <a href="{{ url_for('anunciar') }}" class="btn-dark">Anunciar pet</a>
+        {% if session.user_id %}
+            <span style="margin-right: 15px; font-weight: bold;">Olá, {{ session.user_name }}!</span>
+            <a href="{{ url_for('logout') }}" class="btn-dark">Sair</a>
+        {% else %}
+            <a href="{{ url_for('cadastro') }}" class="btn-dark">Cadastre-se</a>
+            <a href="{{ url_for('login') }}" class="btn-dark">Login</a>
+        {% endif %}
       </div>
     </nav>
-  </header>
+</header>
 
 <div class="container">
 <div class="pet-info-img">

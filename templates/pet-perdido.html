@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pets Perdidos e Achados - Radar Pet</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='pet-perdido.css') }}">
-</head>
+    <style>
+        .flash-messages { position: fixed; top: 20px; right: 20px; z-index: 1000; width: auto; max-width: 400px; }
+        .flash-message { padding: 15px; margin-bottom: 10px; border-radius: 8px; font-weight: bold; color: white; opacity: 1; transform: translateX(0); transition: opacity 0.5s ease, transform 0.5s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .flash-message.fade-out { opacity: 0; transform: translateX(20px); }
+        .flash-success { background-color: #28a745; }
+        .flash-error { background-color: #dc3545; }
+    </style>
 <body>
     <header class="hero">
         <nav class="nav">
@@ -139,5 +144,8 @@
         .no-pets, .error { text-align: center; padding: 40px; font-size: 18px; color: #666; grid-column: 1 / -1; }
         .error { color: #dc3545; }
     </style>
+
+       <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+       
 </body>
 </html>

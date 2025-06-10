@@ -9,7 +9,24 @@
 <body>
 
   <header>
-    </header>
+     <div class="logo">
+      <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='imagens/RadarPet_logo.png') }}" alt="Radar Pet Logo"></a>
+      <h1>Radar Pet</h1>
+    </div>
+    <nav>
+      <a href="#">Como funciona</a>
+      <a href="{{ url_for('pet_perdido') }}">Ver animais</a>
+      <div class="actions">
+        {% if session.user_id %}
+            <span style="margin-right: 15px; font-weight: bold;">Olá, {{ session.user_name }}!</span>
+            <a href="{{ url_for('logout') }}" class="btn-dark">Sair</a>
+        {% else %}
+            <a href="{{ url_for('cadastro') }}" class="btn-dark">Cadastre-se</a>
+            <a href="{{ url_for('login') }}" class="btn-dark">Login</a>
+        {% endif %}
+      </div>
+    </nav>
+  </header>
 
   {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
@@ -52,7 +69,7 @@
 
             <div class="form-group">
                 <input type="date" id="data" name="data" required>
-                <label for="data">Data</label>
+                <label for="data">Data/mês/ano</label>
             </div>
 
             <div class="form-group">
