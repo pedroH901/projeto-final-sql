@@ -1,4 +1,4 @@
 Flask
 pyodbc
 python-dotenv
-werkzeug
+werkzeugp

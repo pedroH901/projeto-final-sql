@@ -134,27 +134,45 @@
   <footer>
         </footer>
     
-    <script>
-        // Encontra o formulário na página
-        const petForm = document.querySelector('form');
-
-        // Garante que o formulário existe antes de adicionar o 'listener'
-        if (petForm) {
-            petForm.addEventListener('submit', function() {
-                // Encontra o botão de submit dentro do formulário
-                const submitButton = petForm.querySelector('button[type="submit"]');
-
-                // Garante que o botão foi encontrado
-                if (submitButton) {
-                    // Desabilita o botão para prevenir cliques duplos
-                    submitButton.disabled = true;
-
-                    // Muda o texto para dar feedback visual ao usuário
-                    submitButton.textContent = 'Enviando...';
-                }
-            });
+<script>
+    // --- SCRIPT 1: ATUALIZAR NOME DO ARQUIVO ---
+    // Adiciona um 'listener' ao input de arquivo para detectar quando um arquivo é escolhido
+    document.getElementById('foto').addEventListener('change', function(e) {
+        const display = document.querySelector('.file-input-display');
+        
+        // Verifica se um arquivo foi selecionado
+        if (e.target.files.length > 0) {
+            // Mostra o nome do arquivo no display customizado
+            display.textContent = `📷 ${e.target.files[0].name}`;
+            display.classList.add('has-file');
+        } else {
+            // Se nenhum arquivo for selecionado, volta ao texto original
+            display.textContent = '📷 Clique para selecionar uma foto';
+            display.classList.remove('has-file');
         }
-    </script>
+    });
+
+    // --- SCRIPT 2: PREVENIR CLIQUE DUPLO NO ENVIO ---
+    // Encontra o formulário na página
+    const petForm = document.querySelector('form');
+
+    // Garante que o formulário existe antes de adicionar o 'listener' de submit
+    if (petForm) {
+        petForm.addEventListener('submit', function() {
+            // Encontra o botão de submit dentro do formulário
+            const submitButton = petForm.querySelector('button[type="submit"]');
+
+            // Garante que o botão foi encontrado
+            if (submitButton) {
+                // Desabilita o botão para prevenir cliques duplos
+                submitButton.disabled = true;
+
+                // Muda o texto para dar feedback visual ao usuário
+                submitButton.textContent = 'Enviando...';
+            }
+        });
+    }
+</script>
 
 </body>
 </html>

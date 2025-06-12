@@ -247,3 +247,10 @@ footer .logo {
   flex-direction: column;
   gap: 10px;
 }
+
+.aviso {
+  font-size: 14px;
+  color: #666;
+  margin-top: 20px;
+  text-align: center;
+}

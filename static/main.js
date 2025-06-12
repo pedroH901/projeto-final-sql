@@ -3,7 +3,7 @@
     const flashMessages = document.querySelectorAll('.flash-message');
     
     if (flashMessages.length > 0) {
-        const displayTime = 5000; // 5 segundos
+        const displayTime = 3000;
 
         setTimeout(() => {
             flashMessages.forEach(msg => {

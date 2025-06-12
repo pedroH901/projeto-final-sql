@@ -1,17 +1,28 @@
 <!DOCTYPE html>
+<head>
 <html lang="pt-BR">
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pets Perdidos e Achados - Radar Pet</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='pet-perdido.css') }}">
     <style>
-        .flash-messages { position: fixed; top: 20px; right: 20px; z-index: 1000; width: auto; max-width: 400px; }
-        .flash-message { padding: 15px; margin-bottom: 10px; border-radius: 8px; font-weight: bold; color: white; opacity: 1; transform: translateX(0); transition: opacity 0.5s ease, transform 0.5s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .flash-message.fade-out { opacity: 0; transform: translateX(20px); }
-        .flash-success { background-color: #28a745; }
-        .flash-error { background-color: #dc3545; }
+        .flash-messages{position:fixed;top:20px;right:20px;z-index:1000;width:auto;max-width:400px}.flash-message{padding:15px;margin-bottom:10px;border-radius:8px;font-weight:700;color:#fff;opacity:1;transform:translateX(0);transition:opacity .5s ease,transform .5s ease;box-shadow:0 4px 8px rgba(0,0,0,.1)}.flash-message.fade-out{opacity:0;transform:translateX(20px)}.flash-success{background-color:#28a745}.flash-error{background-color:#dc3545}
     </style>
+
+</head>
+
 <body>
+
+     {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="flash-messages">
+            {% for category, message in messages %}
+            <div class="flash-message flash-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% endwith %}
+
     <header class="hero">
         <nav class="nav">
             <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='imagens/RadarPet_logo.png') }}" alt="Logo Radar Pet" class="logo"></a>
@@ -31,6 +42,10 @@
             <a href="{{ url_for('anunciar') }}" class="btn-primary">Anunciar pet</a>
         </div>
     </header>
+
+    <section class="aviso">
+        <p>Para melhor controle de tráfego, os anuncios de pets encontrados são apagados do nosso sistema após 30 dias.</p>
+    </section>
 
     <div id="cards-container"></div>
 
@@ -125,7 +140,6 @@
     // GARANTIA: Adiciona o evento apenas uma vez para garantir que loadPets() seja chamado apenas uma vez no carregamento da página.
     document.addEventListener('DOMContentLoaded', loadPets);
 </script>
-    </script>
 
     <style>
         #cards-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 40px; max-width: 1200px; margin: 40px auto; }
@@ -145,7 +159,7 @@
         .error { color: #dc3545; }
     </style>
 
-       <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+       <script src="{{ url_for('static', filename='main.js') }}"></script>
        
 </body>
 </html>
