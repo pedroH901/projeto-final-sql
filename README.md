@@ -106,7 +106,7 @@ radar-pet/
 ├── static/
 │   ├── ... (outros css de página)
 │   ├── main.js
-│   ├── imagens/ (imagens do site)
+│   ├── imagens/(imagens do site)
 │   └── uploads/ (imagens enviadas pelos usuarios)
 ├── templates/
 │   ├── layout.html
