@@ -162,6 +162,15 @@ def api_pets():
         })
     
     return jsonify(pets_json)
+
+@app.route('/verpet/<int:pet_id>')
+def ver_pet(pet_id):
+    pet = Pet.buscar_por_id(pet_id)
+    if not pet:
+        flash('Pet não encontrado!', 'error')
+        return redirect(url_for('pet_perdido'))
+    
     return render_template('verpet.html', pet=pet)
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000, use_reloader=False)
