@@ -86,15 +86,13 @@ def init_db():
             IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='pet' AND xtype='U')
             CREATE TABLE pet (
                 id_pet int primary key identity (1,1) not null,
-                nome varchar(100) not null,
+                nome varchar(100) null,
                 especie varchar (30) not null check (especie in ('Cachorro', 'Gato', 'Outros')),
                 raca varchar(100) null,
                 situacao varchar (15) not null check (situacao in ('Achado', 'Perdido')),
                 foto VARCHAR(255) NULL,
                 data date not null,
                 sexo varchar (15) not null check (sexo in ('Macho', 'Fêmea')),
-                -- REMOVIDO: cidade varchar (100) not null,
-                -- REMOVIDO: bairro varchar (100) not null,
                 descricao varchar(max) not null,
                 mensagem_dono varchar(max) null,
                 nome_tutor varchar(255) not null,
