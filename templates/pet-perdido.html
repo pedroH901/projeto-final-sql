@@ -27,7 +27,6 @@
         <nav class="nav">
             <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='imagens/RadarPet_logo.png') }}" alt="Logo Radar Pet" class="logo"></a>
             <ul class="nav-links">
-                <li><a href="#">Como funciona</a></li>
                 <li><a href="{{ url_for('pet_perdido') }}">Animais</a></li>
                  {% if session.user_id %}
                     <li><a href="{{ url_for('logout') }}" class="btn-outline">Sair</a></li>
